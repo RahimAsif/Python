@@ -137,3 +137,38 @@ def pascal(n):
 
 
 pascal(10)
+
+
+# Write a function that checks whether a string is a palindrome or not. 
+# The program should take in a string and return True if the string is a palindrome and False if not.
+
+def is_palindrome(s):
+    if len(s) == 1 or len(s) == 0:
+        return True
+    else:
+        index1 = 0
+        first_char = s[0]
+        index2 = len(s) - 1
+        last_char = s[index2]
+
+        rem_str = s[1:index2]
+
+        x = (first_char, last_char, index1, index2, rem_str)
+        print(x)
+
+        return first_char == last_char and is_palindrome(s[1:index2])
+    
+print(is_palindrome('racecar'))
+
+
+#4. Write a function that calculates the value of 'a' to the power of 'b'.
+# For example if a=2 and b=4, then power(2,4) would be calculating 2^4=2*2*2*2 so the result would be 16.
+
+def power(a,b):
+    if b == 1:
+        return a
+    else:
+        return a * power(a, b-1)
+    
+
+print(power(3, 4))
